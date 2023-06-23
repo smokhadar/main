@@ -1,0 +1,22 @@
+{
+  "name": "project2main",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smokhadar/project2main.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/smokhadar/project2main/issues"
+  },
+  "homepage": "https://github.com/smokhadar/project2main#readme",
+  "dependencies": {
+    "mysql": "^2.18.1"
+  }
+}
