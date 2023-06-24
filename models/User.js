@@ -35,14 +35,19 @@ User.init({
         len: [8],
       },
     },
-    age: {},
-    createdDate: {},
+    age: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+    createdDate: {
+      type: DataTypes.DATEONLY,
+      allowNull: false,
+    },
     email: {
       type: DataTypes.STRING,
       allowNull: true,
       unique: true, 
     },
-      //validate
     profile_pic_path: {
       type: DataTypes.STRING,
       allowNull: true,
