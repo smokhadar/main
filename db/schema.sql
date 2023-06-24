@@ -1,6 +1,7 @@
 DROP DATABASE IF EXISTS catchUp_db;
 CREATE DATABASE catchUp_db;
 USE catchUp_db;
+
 CREATE TABLE user (
   id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   first_name VARCHAR(30) NOT NULL,
@@ -9,6 +10,7 @@ CREATE TABLE user (
   username VARCHAR(30),
   password VARCHAR(30),
   age INT,
-  createdDate VARCHAR(30)
+  createdDate VARCHAR(30),
+  profile_pic_path VARCHAR(100)
 
 )
