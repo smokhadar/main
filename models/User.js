@@ -8,8 +8,7 @@ class User extends Model {
   }
 }
 
-User.init(
-  {
+User.init({
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -27,7 +26,7 @@ User.init(
     username: {
       type: DataTypes.STRING,
       allowNull: false,
-      // validate to verify uniqueness
+      unique: true, // validate to verify uniqueness
     },
     password: {
       type: DataTypes.STRING,
@@ -39,8 +38,11 @@ User.init(
     age: {},
     createdDate: {},
     email: {
-      //validate
+      type: DataTypes.STRING,
+      allowNull: true,
+      unique: true, 
     },
+      //validate
     profile_pic_path: {
       type: DataTypes.STRING,
       allowNull: true,
