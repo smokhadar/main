@@ -35,6 +35,11 @@ User.init({
         len: [8],
       },
     },
+    email: {
+      type: DataTypes.STRING,
+      allowNull: true,
+      unique: true, 
+    },
     age: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -43,11 +48,7 @@ User.init({
     //   type: DataTypes.DATEONLY,
     //   allowNull: false,
     // },
-    email: {
-      type: DataTypes.STRING,
-      allowNull: true,
-      unique: true, 
-    },
+  
     profile_pic_path: {
       type: DataTypes.STRING,
       allowNull: true,
