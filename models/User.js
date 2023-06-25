@@ -26,7 +26,7 @@ User.init({
     username: {
       type: DataTypes.STRING,
       allowNull: false,
-      unique: true, // validate to verify uniqueness
+      unique: true, 
     },
     password: {
       type: DataTypes.STRING,
@@ -61,7 +61,7 @@ User.init({
       },
     },
     sequelize,
-    timestamps: false,
+    timestamps: false, //Should this be true if we want to timestamp the models? 
     freezeTableName: true,
     underscored: true,
     modelName: "user",
