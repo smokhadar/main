@@ -18,12 +18,13 @@
   },
   "homepage": "https://github.com/smokhadar/project2main#readme",
   "dependencies": {
+    "bcrypt": "^5.1.0",
     "connect-session-sequelize": "^7.1.7",
     "dotenv": "^8.2.0",
     "express": "^4.18.2",
     "express-handlebars": "^7.0.7",
     "express-session": "^1.17.3",
-    "mysql": "^2.18.1", 
+    "mysql": "^2.18.1",
     "mysql2": "^3.4.1",
     "sequelize": "^6.32.1"
   }
