@@ -39,7 +39,7 @@ User.init({
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-    createdDate: {
+    createdDate: { // might not need this field. the timestamp below might be doing this task already if its set to 'true'
       type: DataTypes.DATEONLY,
       allowNull: false,
     },
