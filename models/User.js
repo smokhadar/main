@@ -39,10 +39,10 @@ User.init({
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-    createdDate: { // might not need this field. the timestamp below might be doing this task already if its set to 'true'
-      type: DataTypes.DATEONLY,
-      allowNull: false,
-    },
+    // createdDate: { // might not need this field. the timestamp below might be doing this task already if its set to 'true'
+    //   type: DataTypes.DATEONLY,
+    //   allowNull: false,
+    // },
     email: {
       type: DataTypes.STRING,
       allowNull: true,
