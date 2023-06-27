@@ -23,6 +23,14 @@ User.init({
       type: DataTypes.STRING,
       allowNull: false,
     },
+    email: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      unique: true,
+      validate: {
+        isEmail: true,
+      },
+    },
     username: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -49,6 +57,7 @@ User.init({
     //   allowNull: false,
     // },
   
+
     profile_pic_path: {
       type: DataTypes.STRING,
       allowNull: true,
@@ -59,6 +68,10 @@ User.init({
       beforeCreate: async (newUserData) => {
         newUserData.password = await bcrypt.hash(newUserData.password, 10);
         return newUserData;
+      },
+      beforeUpdate: async (updatedUserData) => {
+        updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
+        return updatedUserData;
       },
     },
     sequelize,

@@ -1,3 +1,4 @@
 const User = require('./User');
+const Channel = require('./Channel');
 
-module.exports = { User };
+module.exports = { User, Channel };
