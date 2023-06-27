@@ -38,7 +38,7 @@ User.init(
     //   // validate to verify uniqueness
     // },
     user_password: {
-      type: DataTypes.TEXT,
+      type: DataTypes.STRING,
       allowNull: false,
       // validate: {
       //   len: [8],
