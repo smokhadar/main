@@ -4,7 +4,7 @@ const bcrypt = require("bcrypt");
 
 class User extends Model {
   checkPassword(loginPw) {
-    return bcrypt.compareSync(loginPw, this.password);
+    return bcrypt.compareSync(loginPw, this.user_password);
   }
 }
 
@@ -16,14 +16,14 @@ User.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    firstName: {
+    username: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    lastName: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
+    // lastName: {
+    //   type: DataTypes.STRING,
+    //   allowNull: false,
+    // },
     email: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -32,33 +32,33 @@ User.init(
         isEmail: true,
       },
     },
-    username: {
-      type: DataTypes.STRING,
+    // username: {
+    //   type: DataTypes.STRING,
+    //   allowNull: false,
+    //   // validate to verify uniqueness
+    // },
+    user_password: {
+      type: DataTypes.TEXT,
       allowNull: false,
-      // validate to verify uniqueness
+      // validate: {
+      //   len: [8],
+      // },
     },
-    password: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        len: [8],
-      },
-    },
-    age: {},
-    createdDate: {},
-    profile_pic_path: {
-      type: DataTypes.STRING,
-      allowNull: true,
-    },
+    // age: {},
+    // createdDate: {},
+    // profile_pic_path: {
+    //   type: DataTypes.STRING,
+    //   allowNull: true,
+    // },
   },
   {
     hooks: {
       beforeCreate: async (newUserData) => {
-        newUserData.password = await bcrypt.hash(newUserData.password, 10);
+        newUserData.user_password = await bcrypt.hash(newUserData.user_password, 10);
         return newUserData;
       },
       beforeUpdate: async (updatedUserData) => {
-        updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
+        updatedUserData.user_password= await bcrypt.hash(updatedUserData.user_password, 10);
         return updatedUserData;
       },
     },
