@@ -1,60 +1,65 @@
 <div class="container">
-    <div class="sign-in-sign-up">
-      <!--Sign in panel-->
-      <form action="" class="sign-in-f">
-        <h2 class="title">Sign In</h2>
-        <div class="input-field">
-          <i class="fas fa-user"></i>
-          <input type="text" placeholder="Username">
-        </div>
-        <div class="input-field">
-          <i class="fas fa-lock"></i>
-          <input type="password" placeholder="Password">
-        </div>
-        <input type="submit" value="Login" class="btn">
-        <!--appears when on mobile screen-->
-        <p class="account-text">Don't have an account? <a href="#" id="signUpBtnTwo">Sign up</a></p>
-      </form>
-      <!--Sign up panel-->
-      <form action="" class="sign-up-f">
-        <h2 class="title">Sign Up</h2>
-        <div class="input-field">
-          <i class="fas fa-user"></i>
-          <input type="text" placeholder="Username">
-        </div>
-        <div class="input-field">
-          <i class="fas fa-lock"></i>
-          <input type="password" placeholder="Password">
-        </div>
-        <div class="input-field">
-          <i class="fas fa-envelope"></i>
-          <input type="text" placeholder="Email">
-        </div>
-        <input type="submit" value="Sign Up" class="btn">
-        <!--appears when on mobile screen-->
-        <p class="account-text">Already have an account? <a href="#" id="signInBtnTwo">Sign in</a></p>
-      </form>
+  <div class="sign-in-sign-up">
+    <!--Sign in panel-->
+    <form action="" class="sign-in-f">
+      <h2 class="title">Sign In</h2>
+      <div class="input-field">
+        <i class="fas fa-user"></i>
+        <input type="text" placeholder="Username" id="username-login" />
       </div>
-      <div class="panels-container">
-        <div class="panel left-panel">
-          <div class="content">
-            <h3>Already have an account?</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit dolore veritatis expedita dolor ipsam voluptas nulla, deleniti doloribus cumque?</p>
-            <button class="btn" id="signInBtn">Sign in</button>
-          </div>
-          <!-- (buggy)
+      <div class="input-field">
+        <i class="fas fa-lock"></i>
+        <input type="password" placeholder="Password" id="password-login" />
+      </div>
+      <input type="submit" value="Login" class="btn" id="btnLogin" />
+      <!--appears when on mobile screen-->
+      <p class="account-text">Don't have an account?
+        <a href="#" id="signUpBtnTwo">Sign up</a></p>
+    </form>
+    <!--Sign up panel-->
+    <form action="" class="sign-up-f">
+      <h2 class="title">Sign Up</h2>
+      <div class="input-field">
+        <i class="fas fa-user"></i>
+        <input type="text" placeholder="Username" id="username-signup" />
+      </div>
+      <div class="input-field">
+        <i class="fas fa-lock"></i>
+        <input type="password" placeholder="Password" id="password-signup" />
+      </div>
+      <div class="input-field">
+        <i class="fas fa-envelope"></i>
+        <input type="text" placeholder="Email" id="email-signup" />
+      </div>
+      <input type="submit" value="Sign Up" class="btn" id="btnSignup" />
+      <!--appears when on mobile screen-->
+      <p class="account-text">Already have an account?
+        <a href="#" id="signInBtnTwo">Sign in</a></p>
+    </form>
+  </div>
+  <div class="panels-container">
+    <div class="panel left-panel">
+      <div class="content">
+        <h3>Already have an account?</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit dolore
+          veritatis expedita dolor ipsam voluptas nulla, deleniti doloribus
+          cumque?</p>
+        <button class="btn" id="signInBtn">Sign in</button>
+      </div>
+      <!-- (buggy)
           <img src="/style/images/undraw_mobile_user_re_xta4.svg" alt="" class="image"> -->
-        </div>
-        <div class="panel right-panel">
-          <div class="content">
-            <h3>New to CatchUp?</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit dolore veritatis expedita dolor ipsam voluptas nulla, deleniti doloribus cumque?</p>
-            <button class="btn" id="signUpBtn">Sign up</button>
-          </div>
-          <!-- (buggy)
-          <img src="/style/images/undraw_public_discussion_re_w9up.svg"> -->
-        </div>
-      </div>
     </div>
-    <script src="/scripts/app.js"></script>
-    
+    <div class="panel right-panel">
+      <div class="content">
+        <h3>New to CatchUp?</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit dolore
+          veritatis expedita dolor ipsam voluptas nulla, deleniti doloribus
+          cumque?</p>
+        <button class="btn" id="signUpBtn">Sign up</button>
+      </div>
+      <!-- (buggy)
+          <img src="/style/images/undraw_public_discussion_re_w9up.svg"> -->
+    </div>
+  </div>
+</div>
+<script src="/scripts/app.js"></script>
