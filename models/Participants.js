@@ -1,42 +1,34 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
-// const { TIME } = require('sequelize');
-// const { Channel } = require('../../../project2main-1/models');
 
-class Message extends Model {} 
+class Participants extends Model {}
 
-Message.init(
-  { // message_id
+Participants.init(
+  {
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
       autoIncrement: true,
     },
-    // message_text
-    body: {
-      type: DataTypes.STRING,
-      allowNull: false,
+    joinDate: {
+      type: DataTypes.DATE,
     },
-    // sent_date_time 
-    sentTime: {
-      type: DataTypes.DATE
+    leaveDate: {
+      type: DataTypes.DATE,
     },
-    // from_user_id
-    sentBy: {  
-      type: DataTypes.STRING,
-      allownull: false,
+    userID: {
+      type: DataTypes.INTEGER,
       references: {
         model: 'user',
         key: 'id'
       }
     },
-    // conversation_id
-    roomId: {
+    channel: {
       type: DataTypes.INTEGER,
       references: {
         model: 'channel',
-        key: 'id',
+        key: 'id'
       }
     },
 
@@ -48,4 +40,4 @@ Message.init(
   }
 );
 
-module.exports = Message;
+module.exports = Participants;
