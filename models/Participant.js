@@ -1,10 +1,10 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Participants extends Model {}
+class Participant extends Model {}
 
-Participants.init(
-  {
+Participant.init(
+  { 
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -16,8 +16,8 @@ Participants.init(
     },
     leaveDate: {
       type: DataTypes.DATE,
-    },
-    userID: {
+    }, 
+    user_id: {
       type: DataTypes.INTEGER,
       references: {
         model: 'user',
@@ -40,4 +40,4 @@ Participants.init(
   }
 );
 
-module.exports = Participants;
+module.exports = Participant;

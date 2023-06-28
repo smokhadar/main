@@ -32,7 +32,7 @@ Message.init(
       }
     },
     // conversation_id
-    roomId: {
+    channel: {
       type: DataTypes.INTEGER,
       references: {
         model: 'channel',

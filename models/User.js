@@ -37,6 +37,8 @@ User.init(
       //   len: [8],
       // },
     },
+
+    
       // lastName: {
     //   type: DataTypes.STRING,
     //   allowNull: false,

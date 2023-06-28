@@ -15,10 +15,16 @@ Channel.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
-        // createDate: {
-        //     type: DataTypes.DATE
-        // },
+        // createdBy: {
 
+        // },
+        // user_id: {
+
+        // },
+        // // createDate: {
+        // //     type: DataTypes.DATE
+        // // },
+        
         sequelize,
         timestamps: true,
         freezeTableName: true,
