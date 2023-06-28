@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require('sequilize');
 const sequelize = require('../config/connection');
-const { TIME } = require('sequelize');
-const { Channel } = require('../../../project2main-1/models');
+// const { TIME } = require('sequelize');
+// const { Channel } = require('../../../project2main-1/models');
 
 class Message extends Model {} 
 
@@ -16,10 +16,9 @@ Message.init(
     // message_text
     body: {
       type: DataTypes.STRING,
-      sendTimestamp: DATE,
-
+      allowNull: false,
     },
-    // sent_date_time
+    // sent_date_time 
     sentTime: {
       type: DataTypes.DATE
     },
@@ -33,16 +32,16 @@ Message.init(
       }
     },
     // conversation_id
-    channel: {
+    roomId: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'channel',
+        model: 'room',
         key: 'id',
       }
     },
 
     sequelize,
-    timestamps: false,
+    timestamps: true,
     freezeTableName: true,
     underscored: true,
     modelName: "message",

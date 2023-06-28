@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require('../config/connection');
 
-class Channel extends Model {};
+class Room extends Model {};
 
-Channel.init(
+Room.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -16,11 +16,11 @@ Channel.init(
             allowNull: false,
         },
         sequelize,
-        timestamps: false,
+        timestamps: true,
         freezeTableName: true,
         underscored: true,
-        modelName: "channel",
+        modelName: "room",
     }
 );
 
-module.exports = Channel;
+module.exports = Room;

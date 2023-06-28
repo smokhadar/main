@@ -1,5 +1,5 @@
 const User = require('./User');
-const Channel = require('./Channel');
+const Channel = require('./Room');
 const Message = require('./Message');
 
 module.exports = { User, Channel, Message };
