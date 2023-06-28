@@ -1,42 +1,60 @@
-<div class="row">
-  <div class="col-md-6">
-    <h2>Login</h2>
-
-    <form class="form login-form">
-      <div class="form-group">
-        <label for="email-login">email:</label>
-        <input class="form-input" type="text" id="email-login" />
+<div class="container">
+    <div class="sign-in-sign-up">
+      <!--Sign in panel-->
+      <form action="" class="sign-in-f">
+        <h2 class="title">Sign In</h2>
+        <div class="input-field">
+          <i class="fas fa-user"></i>
+          <input type="text" placeholder="Username">
+        </div>
+        <div class="input-field">
+          <i class="fas fa-lock"></i>
+          <input type="password" placeholder="Password">
+        </div>
+        <input type="submit" value="Login" class="btn">
+        <!--appears when on mobile screen-->
+        <p class="account-text">Don't have an account? <a href="#" id="signUpBtnTwo">Sign up</a></p>
+      </form>
+      <!--Sign up panel-->
+      <form action="" class="sign-up-f">
+        <h2 class="title">Sign Up</h2>
+        <div class="input-field">
+          <i class="fas fa-user"></i>
+          <input type="text" placeholder="Username">
+        </div>
+        <div class="input-field">
+          <i class="fas fa-lock"></i>
+          <input type="password" placeholder="Password">
+        </div>
+        <div class="input-field">
+          <i class="fas fa-envelope"></i>
+          <input type="text" placeholder="Email">
+        </div>
+        <input type="submit" value="Sign Up" class="btn">
+        <!--appears when on mobile screen-->
+        <p class="account-text">Already have an account? <a href="#" id="signInBtnTwo">Sign in</a></p>
+      </form>
       </div>
-      <div class="form-group">
-        <label for="password-login">password:</label>
-        <input class="form-input" type="password" id="password-login" />
+      <div class="panels-container">
+        <div class="panel left-panel">
+          <div class="content">
+            <h3>Already have an account?</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit dolore veritatis expedita dolor ipsam voluptas nulla, deleniti doloribus cumque?</p>
+            <button class="btn" id="signInBtn">Sign in</button>
+          </div>
+          <!-- (buggy)
+          <img src="/style/images/undraw_mobile_user_re_xta4.svg" alt="" class="image"> -->
+        </div>
+        <div class="panel right-panel">
+          <div class="content">
+            <h3>New to CatchUp?</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit dolore veritatis expedita dolor ipsam voluptas nulla, deleniti doloribus cumque?</p>
+            <button class="btn" id="signUpBtn">Sign up</button>
+          </div>
+          <!-- (buggy)
+          <img src="/style/images/undraw_public_discussion_re_w9up.svg"> -->
+        </div>
       </div>
-      <div class="form-group">
-        <button class="btn btn-primary" type="submit">login</button>
-      </div>
-    </form>
-  </div>
-  <div class="col-md-6">
-    <h2>Signup</h2>
-
-    <form class="form signup-form">
-      <div class="form-group">
-        <label for="name-signup">name:</label>
-        <input class="form-input" type="text" id="name-signup" />
-      </div>
-      <div class="form-group">
-        <label for="email-signup">email:</label>
-        <input class="form-input" type="text" id="email-signup" />
-      </div>
-      <div class="form-group">
-        <label for="password-signup">password:</label>
-        <input class="form-input" type="password" id="password-signup" />
-      </div>
-      <div class="form-group">
-        <button class="btn btn-primary" type="submit">signup</button>
-      </div>
-    </form>
-  </div>
-</div>
-
-<script src='./scripts/login.js'></script>
+    </div>
+    <script src="/scripts/app.js"></script>
+    
