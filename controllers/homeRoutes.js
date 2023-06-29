@@ -35,7 +35,6 @@ router.get("/", async (req, res) => {
     res.status(500).json(err);
   }
 });
-
 // show channel by ID
 // router.get("/channel/:id", async (req, res) => {
 //   try {
