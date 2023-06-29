@@ -2,26 +2,28 @@ const router = require("express").Router();
 const { User } = require("../models");
 const withAuth = require("../utils/auth");
 
-// router.get("/", async (req, res) => {
-//   try {
-//     console.log("Hello welcome to Home Route");
-//     // Get all projects and JOIN with user data
-//     // const projectData = await Project.findAll({
-//     //   include: [
-//     //     {
-//     //       model: User,
-//     //       attributes: ["name"],
-//     //     },
-//     //   ],
-//     // });
-//     // Serialize data so the template can read it
-//     // const projects = projectData.map((project) => project.get({ plain: true }));
-//     // Pass serialized data and session flag into template
-//     res.render("login");
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
+router.get("/", async (req, res) => {
+  try {
+    res.render("login", { formCSS: true });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get("/chat", async (req, res) => {
+  try {
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ["password"] },
+    });
+
+    const user = userData.get({ plain: true });
+    // Find the logged in user based on the session ID
+    console.log("Logged in: ", user);
+    res.render("chat", { ...user, pageTitle: "Chat", chatCSS: true });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 router.get("/user/:id", async (req, res) => {
   try {
@@ -32,7 +34,7 @@ router.get("/user/:id", async (req, res) => {
 });
 
 // Use withAuth middleware to prevent access to route
-router.get("/user", withAuth, async (req, res) => {
+router.get("/user", async (req, res) => {
   try {
   } catch (err) {
     res.status(500).json(err);

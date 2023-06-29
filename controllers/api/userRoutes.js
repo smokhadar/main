@@ -7,7 +7,11 @@ router.post("/", async (req, res) => {
   try {
     const userData = await User.create(req.body);
     console.log("test inside new user", { userData });
-    res.status(200).json(userData);
+
+    if (res.status(200)) {
+      res.render("chat", { user: userData });
+    }
+    //res.status(200).json(userData);
 
     // req.session.save(() => {
     //   req.session.user_id = userData.id;
@@ -45,14 +49,12 @@ router.post("/login", async (req, res) => {
       return;
     }
 
-    res.json({ user: userData, message: "You are now logged in!" });
+    req.session.save(() => {
+      req.session.user_id = userData.id;
+      req.session.logged_in = true;
 
-    // req.session.save(() => {
-    //   req.session.user_id = userData.id;
-    //   req.session.logged_in = true;
-
-    //   res.json({ user: userData, message: "You are now logged in!" });
-    // });
+      res.json({ user: userData, message: "You are now logged in!" });
+    });
   } catch (err) {
     console.log(err);
     res.status(400).json(err);

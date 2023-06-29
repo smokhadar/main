@@ -14,8 +14,7 @@ const loginFormHandler = async (event) => {
 
     if (response.ok) {
       // TODO: Show the details page
-      document.location.replace("/chat");
-      alert("you are now logged in!");
+      document.location.replace("/chat", { response: response });
     } else {
       alert(response.statusText);
     }

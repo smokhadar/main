@@ -1,0 +1,156 @@
+@import url("https://fonts.googleapis.com/css?family= Poppins:wght@400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: none;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  color: #000;
+}
+.container {
+  display: flex;
+}
+
+.sidebar {
+  height: 100vh;
+  width: 24%;
+  background: linear-gradient(-45deg, #df4adf, #520852);
+  /* background: rgb(27, 27, 27); */
+  /* color: white; */
+}
+
+.profile {
+  display: flex;
+  padding: 10px;
+  border-radius: 10px;
+  /* background: rgb(46, 45, 45); */
+  background: #444;
+}
+
+.profile img {
+  width: 70px;
+  height: 70px;
+  border-radius: 30%;
+}
+
+.profile-data {
+  padding: 10px;
+}
+.profile-data h3 {
+  letter-spacing: 1px;
+  font-size: 20px;
+  color: #fffeff;
+}
+
+.profile-data span {
+  color: #fffeff;
+}
+
+.sidebar .title {
+  padding: 10px;
+  margin-top: 10px;
+  font-size: 22px;
+  color: #fffeff;
+}
+
+.sidebar .title span {
+  color: #fffeff;
+  font-size: 12px;
+  margin-left: 5px;
+}
+
+/* Online Ids */
+
+.online-ids {
+  padding: 0 10px;
+}
+
+.online-ids img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+/* Recent Messages */
+.messages .recents {
+  display: flex;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.recents img {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  margin-top: 5px;
+}
+
+.recent-data {
+  padding: 10px;
+}
+
+.recent-data h3 {
+  letter-spacing: 1px;
+  font-size: 17px;
+  color: #fffeff;
+}
+
+.recent-data span {
+  color: #fffeff;
+  font-size: 13px;
+}
+
+.messages .active {
+  background: linear-gradient(-45deg, #d75bd7, #a468a4);
+}
+
+.recents:hover {
+  background: linear-gradient(-45deg, #d75bd7, #a468a4);
+}
+
+/* Messages box Section */
+.message-box {
+  color: #fff;
+  width: 55%;
+  background-color: #fff;
+  position: relative;
+}
+
+.box-top {
+  display: flex;
+  padding: 10px 20px;
+  background: #d7d0d0;
+}
+
+.box-top .recents {
+  display: flex;
+}
+
+.message-box .recents:hover {
+  background: none;
+}
+
+/* call action */
+.call-actions {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 15px 20px;
+}
+
+.action-icons {
+  margion-top: 10px;
+}
+
+.action-icons i {
+  margin: 10px;
+  color: inear-gradient(-45deg, #d75bd7, #a468a4);
+  cursor: pointer;
+}
