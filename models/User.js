@@ -1,4 +1,4 @@
-const { Model, DataTypes } = require("sequelize");
+const { Model, DataTypes, BOOLEAN } = require("sequelize");
 const sequelize = require("../config/connection");
 const bcrypt = require("bcrypt");
 
@@ -35,6 +35,11 @@ User.init(
         len: [8],
       },
     },
+    onlineStatus: {
+      type: BOOLEAN,
+      allowNull: false,
+      defaultValue: false,
+    }
       // lastName: {
     //   type: DataTypes.STRING,
     //   allowNull: false,

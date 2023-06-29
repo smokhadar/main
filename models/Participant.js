@@ -31,13 +31,14 @@ Participant.init(
         key: 'id'
       }
     },
-
-    sequelize,
-    timestamps: true,
-    freezeTableName: true,
-    underscored: true,
-    modelName: "message",
-  }
+    },
+    {
+      sequelize,
+      timestamps: true,
+      freezeTableName: true,
+      underscored: true,
+      modelName: "message",
+    }
 );
 
 module.exports = Participant;

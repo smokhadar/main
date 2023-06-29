@@ -16,20 +16,19 @@ Channel.init(
             allowNull: false,
         },
         // createdBy: {
-
         // },
         // user_id: {
-
         // },
         // // createDate: {
         // //     type: DataTypes.DATE
         // // },
-        
-        sequelize,
-        timestamps: true,
-        freezeTableName: true,
-        underscored: true,
-        modelName: "channel",
+    },
+    {
+    sequelize,
+    timestamps: true,
+    freezeTableName: true,
+    underscored: true,
+    modelName: "channel",
     }
 );
 

@@ -24,7 +24,7 @@ app.use(express.static(publicdir));
 // Inform Express.js on which template engine to use
 app.engine(
   "handlebars",
-  expressHbs.engine({
+  expressHbs({
     layoutsDir: "views/layouts",
     defaultLayout: "main-layout",
     extname: "handlebars",
