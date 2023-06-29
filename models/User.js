@@ -20,10 +20,7 @@ User.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    // lastName: {
-    //   type: DataTypes.STRING,
-    //   allowNull: false,
-    // },
+  
     email: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -32,11 +29,7 @@ User.init(
         isEmail: true,
       },
     },
-    // username: {
-    //   type: DataTypes.STRING,
-    //   allowNull: false,
-    //   // validate to verify uniqueness
-    // },
+
     user_password: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -44,6 +37,12 @@ User.init(
       //   len: [8],
       // },
     },
+
+    
+      // lastName: {
+    //   type: DataTypes.STRING,
+    //   allowNull: false,
+    // },
     // age: {},
     // createdDate: {},
     // profile_pic_path: {
@@ -63,7 +62,7 @@ User.init(
       },
     },
     sequelize,
-    timestamps: false,
+    timestamps: true,
     freezeTableName: true,
     underscored: true,
     modelName: "user",
