@@ -39,17 +39,17 @@ User.init(
       type: BOOLEAN,
       allowNull: false,
       defaultValue: false,
-    }
+    },
       // lastName: {
     //   type: DataTypes.STRING,
     //   allowNull: false,
     // },
     // age: {},
     // createdDate: {},
-    // profile_pic_path: {
-    //   type: DataTypes.STRING,
-    //   allowNull: true,
-    // },
+    profile_pic_path: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
   },
   {
     hooks: {
