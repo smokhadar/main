@@ -1,32 +1,32 @@
 const router = require("express").Router();
-const { User, Channel } = require("../models");
+const { User, Channel, Message } = require("../models");
 const withAuth = require("../utils/auth");
 
 // show all channels
-router.get("/", async (req, res) => {
-  try {
-    console.log("Hello welcome to Home Route");
-    const channelData = await Channel.findAll({
-      include: [
-        {
-          model: Message,
-          attributes: ["body"],
-        },
-      ],
-    });
-    // Serialize data so the template can read it
-    const channels = channelData.map((channel) => channel.get({ plain: true }));
-    res.json(channels);
+// router.get("/", async (req, res) => {
+//   try {
+//     console.log("Hello welcome to Home Route");
+//     const channelData = await Channel.findAll({
+//       include: [
+//         {
+//           model: Message,
+//           attributes: ["body"],
+//         },
+//       ],
+//     });
+//     // Serialize data so the template can read it
+//     const channels = channelData.map((channel) => channel.get({ plain: true }));
+//     res.json(channels);
 
-    // what handlebars to render?
-  //   res.render("chat", {
-  //   channels,
-  //   logged_in: req.session.logged_in,
-  //  })
-  } catch (err) {
-    console.log(err);
-  }
-});
+//     // what handlebars to render?
+//   //   res.render("chat", {
+//   //   channels,
+//   //   logged_in: req.session.logged_in,
+//   //  })
+//   } catch (err) {
+//     console.log(err);
+//   }
+// });
   
 router.get("/", async (req, res) => {
   try {
@@ -37,28 +37,28 @@ router.get("/", async (req, res) => {
 });
 
 // show channel by ID
-router.get("/channel/:id", async (req, res) => {
-  try {
-    const channelData = await Channel.findByPk(req.params.id, {
-      include: [
-        {
-          model: User,
-          attributes: ['username'],
-        },
-      ],
-    });
+// router.get("/channel/:id", async (req, res) => {
+//   try {
+//     const channelData = await Channel.findByPk(req.params.id, {
+//       include: [
+//         {
+//           model: User,
+//           attributes: ['username'],
+//         },
+//       ],
+//     });
 
-    const channel = channelData.get({ plain: true});
+//     const channel = channelData.get({ plain: true});
 
-    res.render('channel', {
-      ...channel,
-      // 
-    });
-  } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
-  }
-})
+//     res.render('channel', {
+//       ...channel,
+//       // 
+//     });
+//   } catch (err) {
+//     console.log(err);
+//     res.status(500).json(err);
+//   }
+// })
 
 router.get("/chat", async (req, res) => {
   try {
