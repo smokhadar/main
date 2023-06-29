@@ -35,6 +35,11 @@ User.init(
         len: [8],
       },
     },
+      // lastName: {
+    //   type: DataTypes.STRING,
+    //   allowNull: false,
+    // },
+    // age: {},
     // createdDate: {},
     // profile_pic_path: {
     //   type: DataTypes.STRING,
@@ -53,6 +58,7 @@ User.init(
       },
     },
     sequelize,
+    timestamps: true,
     freezeTableName: true,
     underscored: true,
     modelName: "user",

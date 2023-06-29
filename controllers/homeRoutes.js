@@ -21,6 +21,11 @@ router.get("/", async (req, res) => {
     // res.render("allChannels");
   } catch (err) {
     console.log(err);
+
+router.get("/", async (req, res) => {
+  try {
+    res.render("login", { formCSS: true });
+  } catch (err) {
     res.status(500).json(err);
   }
 });
@@ -48,6 +53,21 @@ router.get("/channel/:id", async (req, res) => {
     res.status(500).json(err);
   }
 })
+
+router.get("/chat", async (req, res) => {
+  try {
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ["password"] },
+    });
+
+    const user = userData.get({ plain: true });
+    // Find the logged in user based on the session ID
+    console.log("Logged in: ", user);
+    res.render("chat", { ...user, pageTitle: "Chat", chatCSS: true });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 //show user profile
 router.get("/user/:id", async (req, res) => {
@@ -80,7 +100,7 @@ router.get("/user/messages/:id", async (req, res) => {
 })
 
 // Use withAuth middleware to prevent access to route
-router.get("/user", withAuth, async (req, res) => {
+router.get("/user", async (req, res) => {
   try {
   } catch (err) {
     res.status(500).json(err);
