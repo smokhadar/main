@@ -10,7 +10,24 @@ socket.on("message", (msg) => {
 
    
 });
+ /*$msgForm.addEventListener("submit", (e) => {
+    e.preventDefault();
 
+    $msgFormButton.setAttribute('disabled', 'disabled')
+    let msg = document.querySelector("input").value
+
+    socket.emit("sendMessage", msg, (error) => {
+        $msgFormButton.removeAttribute('disabled')
+        $msgForInput.value = ''
+        $msgForInput.focus()
+        if (error) {
+            return console.log(error)
+        }
+
+        console.log('Message delivered!')
+    });
+});
+*/
 
 socket.emit('join', { username, room }, (error) => {
     if (error) {
