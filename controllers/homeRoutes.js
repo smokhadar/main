@@ -9,19 +9,25 @@ router.get("/", async (req, res) => {
     const channelData = await Channel.findAll({
       include: [
         {
-          model: User,
-          attributes: ["name"],
+          model: Message,
+          attributes: ["body"],
         },
       ],
     });
     // Serialize data so the template can read it
     const channels = channelData.map((channel) => channel.get({ plain: true }));
-    // Pass serialized data and session flag into template
-    // what handlebars to render for all channels? homepage?
-    // res.render("allChannels");
+    res.json(channels);
+
+    // what handlebars to render?
+  //   res.render("chat", {
+  //   channels,
+  //   logged_in: req.session.logged_in,
+  //  })
   } catch (err) {
     console.log(err);
-
+  }
+});
+  
 router.get("/", async (req, res) => {
   try {
     res.render("login", { formCSS: true });

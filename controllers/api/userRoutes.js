@@ -25,6 +25,24 @@ router.post("/", async (req, res) => {
   }
 });
 
+//update user profile
+router.put('/:id', async(req, res) => {
+  console.log(req.body);
+  try {
+    const userData = await User.findOne({
+      where: { username: req.body.username
+      },
+    });
+
+    // write switch statements to update user profile based on req body
+    // const newUserData
+  } catch (err) {
+    console.log(err);
+    res.status(400).json(err);
+  }
+});
+
+
 //api/users/login
 router.post("/login", async (req, res) => {
   console.log(req.body);

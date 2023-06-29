@@ -15,7 +15,7 @@ const PORT = process.env.PORT || 3001;
 // Inform Express.js on which template engine to use
 app.engine(
   "handlebars",
-  expressHbs.engine({
+  expressHbs({
     layoutsDir: "views/layouts",
     defaultLayout: "main-layout",
     extname: "handlebars",

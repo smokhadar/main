@@ -32,7 +32,6 @@ Message.init(
       }
     },
     // instead of from_user_id, should it be from participant id? 
- 
     // conversation_id
     channel_id: {
       type: DataTypes.INTEGER,
@@ -41,12 +40,13 @@ Message.init(
         key: 'id',
       }
     },
-
-    sequelize,
-    timestamps: true,
-    freezeTableName: true,
-    underscored: true,
-    modelName: "message",
+  },
+  {
+  sequelize,
+  timestamps: true,
+  freezeTableName: true,
+  underscored: true,
+  modelName: "message",
   }
 );
 

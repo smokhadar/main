@@ -5,3 +5,7 @@ VALUES ("Mark","msmith@email.com", "password");
     --    ("Tom","Brown","tbrown@email.com" ,"tbrown","password",25, "June 22,2023"),
     --    ("Helen","Paul","hpaul@email.com" ,"hpaul","password",20, "June 22,2023"),
     --    ("Alex","Jones","alexj@email.com" ,"alexj","password",22, "June 22,2023");
+
+
+INSERT INTO channel(name)  
+VALUES ("catfans");
