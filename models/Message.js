@@ -27,10 +27,12 @@ Message.init(
       type: DataTypes.STRING,
       allownull: false,
       references: {
-        model: 'user',
+        model: 'participant',
         key: 'id'
       }
     },
+    // instead of from_user_id, should it be from participant id? 
+ 
     // conversation_id
     channel: {
       type: DataTypes.INTEGER,
