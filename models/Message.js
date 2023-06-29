@@ -33,13 +33,13 @@ Message.init(
     },
     // instead of from_user_id, should it be from participant id? 
     // conversation_id
-    channel_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'channel',
-        key: 'id',
-      }
-    },
+    // channel_id: {
+    //   type: DataTypes.INTEGER,
+    //   references: {
+    //     model: 'channel',
+    //     key: 'id',
+    //   }
+    // },
   },
   {
   sequelize,
