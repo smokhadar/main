@@ -24,7 +24,7 @@ Participant.init(
         key: 'id'
       }
     },
-    channel: {
+    channel_id: {
       type: DataTypes.INTEGER,
       references: {
         model: 'channel',

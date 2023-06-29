@@ -3,8 +3,6 @@ const Channel = require('./Channel');
 const Message = require('./Message');
 const Participant = require('./Participant');
 
-
-
 // User has many Participant FK-user_id
 User.hasMany(Participant, {
   foreignKey: 'user_id', // is user_id right? 
@@ -24,27 +22,35 @@ Channel.hasMany(Participant, {
   foreignKey: 'channel_id',
   onDelete: 'CASCADE'
 });
-// OR
+
 // User belongs to many channels THROUGH Participant
 User.belongsTo(Channel, {
-  through: Participant, 
-  unique: false
+  through: {
+    model: Participant, 
+    unique: false
+  }
 });
 // Channel has many users THROUGH Participant
 Channel.hasMany(User, {
-  through: Participant,
-  unique: false
+  through: {
+    model: Participant,
+    unique: false
+  }
 });
-
 
 // Participant has many Messages
 Participant.hasMany(Message, {
-  foreignKey: 'participant_id',
-  onDelete: 'CASCADE' // is this right? delete the message from a channel if username is deleted?
+  through: {
+    model: Channel,
+    unique: false,
+  }
 });
 // Messages belongs to Participant
 Message.belongsToMany(Participant, {
-  foreignKey: 'participant_id'
+  through: {
+    model: Channel,
+    unique: false
+  }
 });
 
 // Messages belongs to one Channel
@@ -57,8 +63,31 @@ Channel.hasMany(Message, {
   onDelete: 'CASCADE'
 });
 
+// message belongs to user
+Message.belongsToMany(User, {
+  foreignKey: 'user_id'
+});
+// user has many message
+User.hasMany(Message, {
+  foreignKey: 'user_id'
+});
 
 
+// // message belongs to user if we change user_id to participant_id
+// Message.belongsTo(User, {
+//   through: {
+//     model: Participant,
+//     unique: false,
+//   }
+// });
+
+// // user has many message if we change user_id to participant_id
+// User.hasMany(Message, {
+//   through: {
+//     model: Participant,
+//     unique: false, 
+//   }
+// });
 
 
 
