@@ -2,7 +2,6 @@ const router = require("express").Router();
 const { Message } = require("../../models");
 
 //create new message
-// how to save message to channel?
 router.post('/', async (req, res) => {
     console.log(req.body, "request");
     try {
