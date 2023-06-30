@@ -37,10 +37,10 @@ User.init(
     },
     onlineStatus: {
       type: BOOLEAN,
-      allowNull: false,
+      allowNull: true,
       defaultValue: false,
     },
-      // lastName: {
+    // lastName: {
     //   type: DataTypes.STRING,
     //   allowNull: false,
     // },
@@ -54,11 +54,17 @@ User.init(
   {
     hooks: {
       beforeCreate: async (newUserData) => {
-        newUserData.user_password = await bcrypt.hash(newUserData.user_password, 10);
+        newUserData.user_password = await bcrypt.hash(
+          newUserData.user_password,
+          10
+        );
         return newUserData;
       },
       beforeUpdate: async (updatedUserData) => {
-        updatedUserData.user_password= await bcrypt.hash(updatedUserData.user_password, 10);
+        updatedUserData.user_password = await bcrypt.hash(
+          updatedUserData.user_password,
+          10
+        );
         return updatedUserData;
       },
     },
