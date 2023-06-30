@@ -18,14 +18,14 @@ Message.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    // sent_date_time 
-    sentTime: {
-      type: DataTypes.DATE
-    },
+    // // sent_date_time 
+    // sentTime: {
+    //   type: DataTypes.DATE
+    // },
     // from_user_id
     user_id: {  
-      type: DataTypes.STRING,
-      allownull: false,
+      type: DataTypes.INTEGER,
+      allowNull: false,
       references: {
         model: 'user',
         key: 'id'

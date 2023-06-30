@@ -14,7 +14,7 @@ const loginFormHandler = async (event) => {
 
     if (response.ok) {
       // TODO: Show the details page
-      document.location.replace("/chat", { response: response });
+      document.location.replace("/profile", { response: response });
     } else {
       alert(response.statusText);
     }
@@ -38,7 +38,7 @@ const signupFormHandler = async (event) => {
 
     if (response.ok) {
       //TODO: show the details page
-      document.location.replace("/chat", { response: response });
+      document.location.replace("/profile", { response: response });
     } else {
       alert(response.statusText);
     }
