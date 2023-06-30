@@ -38,7 +38,7 @@ const signupFormHandler = async (event) => {
 
     if (response.ok) {
       //TODO: show the details page
-      document.location.replace("/profile");
+      document.location.replace("/chat", { response: response });
     } else {
       alert(response.statusText);
     }
