@@ -15,16 +15,16 @@ Message.init(
     text: {
       type: DataTypes.STRING,
       // allowNull needs to be true otherwise it won't post
-      allowNull: true,
+      allowNull: false,
     },
-    // sent_date_time 
-    sentTime: {
-      type: DataTypes.DATE
-    },
+    // // sent_date_time 
+    // sentTime: {
+    //   type: DataTypes.DATE
+    // },
     // from_user_id
     user_id: {  
       type: DataTypes.INTEGER,
-      allownull: true,
+      allowNull: true,
       references: {
         model: 'user',
         key: 'id'
