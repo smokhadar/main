@@ -37,8 +37,8 @@ Participant.init(
       timestamps: true,
       freezeTableName: true,
       underscored: true,
-      modelName: "message",
+      modelName: "participant",
     }
 );
 
-module.exports = Participant;
+// module.exports = Participant;

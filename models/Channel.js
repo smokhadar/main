@@ -25,11 +25,11 @@ Channel.init(
     },
     {
     sequelize,
-    timestamps: true,
+    timestamps: false,
     freezeTableName: true,
     underscored: true,
     modelName: "channel",
     }
 );
 
-module.exports = Channel;
+// module.exports = Channel;

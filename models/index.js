@@ -1,7 +1,7 @@
 const User = require('./User');
-const Channel = require('./Channel');
+// const Channel = require('./Channel');
 const Message = require('./Message');
-const Participant = require('./Participant');
+// const Participant = require('./Participant');
 
 // // User has many Participant FK-user_id
 // User.hasMany(Participant, {
@@ -78,4 +78,4 @@ User.hasMany(Message, {
   foreignKey: 'user_id'
 });
 
-module.exports = { User, Channel, Message, Participant };
+module.exports = { User, Message };
