@@ -14,10 +14,10 @@ Message.init(
       autoIncrement: true,
     },
     // message_text
-    body: {
+    text: {
       type: DataTypes.STRING,
       // allowNull needs to be true otherwise it won't post
-      allowNull: false,
+      allowNull: true,
     },
     // sent_date_time 
     sentTime: {
@@ -44,7 +44,7 @@ Message.init(
   },
   {
   sequelize,
-  timestamps: true,
+  timestamps: false,
   freezeTableName: true,
   underscored: true,
   modelName: "message",
