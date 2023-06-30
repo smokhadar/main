@@ -6,16 +6,21 @@ const sequelize = require("./config/connection");
 const helpers = require("./utils/helpers");
 const session = require("express-session");
 
-const http = require('http');
-const socketio = require('socket.io');
-const { generatemsg, generateLocation } = require('./utils/messages');
+const http = require("http");
+const socketio = require("socket.io");
+const { generatemsg, generateLocation } = require("./utils/messages");
 
-const { addUser, removeUser, getUser, getUserInRoom } = require('./utils/users');
+const {
+  addUser,
+  removeUser,
+  getUser,
+  getUserInRoom,
+} = require("./utils/users");
 const app = express();
 const PORT = process.env.PORT || 3001;
 const server = http.createServer(app);
 const io = socketio(server);
-const publicdir = path.join(__dirname, './public');
+const publicdir = path.join(__dirname, "./public");
 app.use(express.static(publicdir));
 
 // Set up Handlebars.js engine with custom helpers
@@ -64,49 +69,58 @@ app.use(routes);
 io.on("connection", (socket) => {
   console.log("new connection");
   socket.on("join", ({ username, room }, cb) => {
-
-    const { error, user } = addUser({ id: socket.id, username, room })
+    const { error, user } = addUser({ id: socket.id, username, room });
 
     if (error) {
-        return cb(error)
+      return cb(error);
     }
-    socket.join(user.room)
-    socket.emit("message", generatemsg("Admin ,Welcome"))
-    socket.broadcast.to(user.room).emit("message", generatemsg(`Admin ${user.username} has joined!`))
+    socket.join(user.room);
+    socket.emit("message", generatemsg("Admin ,Welcome"));
+    socket.broadcast
+      .to(user.room)
+      .emit("message", generatemsg(`Admin ${user.username} has joined!`));
 
     io.to(user.room).emit("roomData", {
-        room: user.room,
-        users: getUserInRoom(user.room)
-    })
-    cb()
-})
+      room: user.room,
+      users: getUserInRoom(user.room),
+    });
+    cb();
+  });
 
-socket.on("sendMessage", (msg, cb) => {
-    const user = getUser(socket.id)
-    io.to(user.room).emit("message", generatemsg(user.username, msg))
-    cb()
-})
+  socket.on("sendMessage", (msg, cb) => {
+    const user = getUser(socket.id);
+    io.to(user.room).emit("message", generatemsg(user.username, msg));
+    cb();
+  });
 
-socket.on("sendLocation", (location, cb) => {
-    const user = getUser(socket.id)
-    console.log(user)
-    io.to(user.room).emit("locationurl", generateLocation(user.username, `https://www.google.com/maps?q=${location.latitude},${location.longitude}`))
-    cb()
-})
+  socket.on("sendLocation", (location, cb) => {
+    const user = getUser(socket.id);
+    console.log(user);
+    io.to(user.room).emit(
+      "locationurl",
+      generateLocation(
+        user.username,
+        `https://www.google.com/maps?q=${location.latitude},${location.longitude}`
+      )
+    );
+    cb();
+  });
 
-socket.on("disconnect", () => {
-    const user = removeUser(socket.id)
-    console.log(user)
+  socket.on("disconnect", () => {
+    const user = removeUser(socket.id);
+    console.log(user);
     if (user) {
-        io.to(user.room).emit("message", generatemsg(`Admin ${user.username} A user  has left`))
+      io.to(user.room).emit(
+        "message",
+        generatemsg(`Admin ${user.username} A user  has left`)
+      );
 
-        io.to(user.room).emit("roomData", {
-            room: user.room,
-            users: getUserInRoom(user.room)
-        })
+      io.to(user.room).emit("roomData", {
+        room: user.room,
+        users: getUserInRoom(user.room),
+      });
     }
-
-})
+  });
 });
 
 sequelize.sync({ force: false }).then(() => {
