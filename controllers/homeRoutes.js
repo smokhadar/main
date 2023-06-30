@@ -74,13 +74,19 @@ router.get("/chat", async (req, res) => {
   }
 });
 
+//show user profile after signup
+// router.get("/profile", async (req, res) => {
+//   try {
+//     res.render('profile')
+//   }
+// })
+
 //show user profile
 router.get("/user/:id", async (req, res) => {
   try {
     // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
-      include: [{ model: Project }],
     });
 
     const user = userData.get({ plain: true });
@@ -118,8 +124,12 @@ router.get("/login", (req, res) => {
   //     res.redirect("/profile");
   //     return;
   //   }
-  console.log("User needs to login in");
-  res.render("login");
+  try {  
+    res.render("login"); 
+  } catch (err) {
+    console.log(err);
+    console.log("User needs to login in");
+  }
 });
 
 module.exports = router;
