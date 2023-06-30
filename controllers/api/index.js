@@ -1,8 +1,8 @@
 const router = require("express").Router();
 const userRoutes = require("./userRoutes");
-const chatRoutes = require("./chatRoutes");
+const channelRoutes = require('./channelRoutes');
 
 router.use("/users", userRoutes);
-router.use("/chat", chatRoutes);
+router.use("/channels", channelRoutes);
 
 module.exports = router;

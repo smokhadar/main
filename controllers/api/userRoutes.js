@@ -8,10 +8,10 @@ router.post("/", async (req, res) => {
     const userData = await User.create(req.body);
     console.log("test inside new user", { userData });
 
-    if (res.status(200)) {
-      res.render("chat", { user: userData });
-    }
-    //res.status(200).json(userData);
+    // if (res.status(200)) {
+    //   res.render("chat", { user: userData });
+    // }
+    res.status(200).json(userData);
 
     // req.session.save(() => {
     //   req.session.user_id = userData.id;
@@ -24,6 +24,30 @@ router.post("/", async (req, res) => {
     res.status(400).json(err);
   }
 });
+
+//update user profile
+router.put('/:id', async(req, res) => {
+  console.log(req.body);
+    User.update(
+      {
+        email: req.body.email,
+        profile_pic_path: req.body.profile_pic_path,
+      },
+      {
+        where: {
+          id: req.params.id,
+        }
+      }
+     )
+      .then((updatedUser) => {
+        res.json(updatedUser);
+      }) 
+     .catch((err) => {
+    console.log(err);
+    res.status(400).json(err);
+  });
+});
+
 
 //api/users/login
 router.post("/login", async (req, res) => {
