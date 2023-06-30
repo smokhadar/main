@@ -95,4 +95,13 @@ router.post("/logout", (req, res) => {
   }
 });
 
+//create route to show online users
+// router.get('/online', (req, res) => {
+//   try {
+//     const onlineUsers = 
+//   } catch (err) {
+
+//   }
+// });
+
 module.exports = router;
