@@ -29,7 +29,7 @@ router.get("/", async (req, res) => {
 router.post('/', async (req, res) => {
     console.log(req.body, "request");
     try {
-        const newMessage = await Message.create(req.body.body); 
+        const newMessage = await Message.create(req.body); 
         res.status(200).json(newMessage);
     } catch (err) {
         console.log(err);

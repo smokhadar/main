@@ -14,10 +14,10 @@ Message.init(
       autoIncrement: true,
     },
     // message_text
-    text: {
+    body: {
       type: DataTypes.STRING,
       // allowNull needs to be true otherwise it won't post
-      // allowNull: false,
+      allowNull: false,
     },
     // sent_date_time 
     sentTime: {
@@ -26,7 +26,7 @@ Message.init(
     // from_user_id
     user_id: {  
       type: DataTypes.STRING,
-      allownull: false,
+      allownull: true,
       references: {
         model: 'user',
         key: 'id'
