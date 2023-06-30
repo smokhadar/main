@@ -5,6 +5,6 @@ const messageRoutes = require('./messageRoutes');
 
 router.use("/users", userRoutes);
 router.use("/channels", channelRoutes);
-// router.use("/messages", messageRoutes);
+router.use("/message", messageRoutes)
 
 module.exports = router;
