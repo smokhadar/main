@@ -18,6 +18,7 @@ router.get("/", async (req, res) => {
       res.render("chat", {
       message,
       logged_in: req.session.logged_in,
+      
      })
     } catch (err) {
       console.log(err);
@@ -28,7 +29,7 @@ router.get("/", async (req, res) => {
 router.post('/', async (req, res) => {
     console.log(req.body, "request");
     try {
-        const newMessage = await Message.create(req.body);
+        const newMessage = await Message.create(req.body.body); 
         res.status(200).json(newMessage);
     } catch (err) {
         console.log(err);
@@ -37,4 +38,4 @@ router.post('/', async (req, res) => {
 })
 
 module.exports = router;
-//
+// "body", { body: req.params.body }

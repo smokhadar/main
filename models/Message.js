@@ -14,9 +14,10 @@ Message.init(
       autoIncrement: true,
     },
     // message_text
-    body: {
+    text: {
       type: DataTypes.STRING,
-      allowNull: false,
+      // allowNull needs to be true otherwise it won't post
+      // allowNull: false,
     },
     // sent_date_time 
     sentTime: {
