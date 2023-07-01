@@ -40,15 +40,10 @@ User.init(
       allowNull: true,
       defaultValue: false,
     },
-    // lastName: {
-    //   type: DataTypes.STRING,
-    //   allowNull: false,
-    // },
-    // age: {},
-    // createdDate: {},
     profile_pic_path: {
       type: DataTypes.STRING,
       allowNull: true,
+      defaultValue: null,
     },
   },
   {
@@ -69,7 +64,7 @@ User.init(
       },
     },
     sequelize,
-    timestamps: false,
+    timestamps: true,
     freezeTableName: true,
     underscored: true,
     modelName: "user",
