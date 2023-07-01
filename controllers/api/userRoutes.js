@@ -13,8 +13,10 @@ router.post("/", async (req, res) => {
       req.session.logged_in = true;
     });
 
+  const user = userData.get({ plain: true });
+  
    res.render('profile', {
-    ...userData,
+    user
    })
 
   } catch (err) {
