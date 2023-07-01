@@ -7,7 +7,8 @@
       </div>
       <div class="profile-data">
         <h3>Let's Catch Up</h3>
-        <span>Nidsh</span>
+        <span>{{username}}</span>
+        <input id="spuserid">ID : {{id}}</input>
       </div>
     </div>
 
@@ -101,7 +102,7 @@
     {{! chat box }}
 
     <div class="box">
-      <div class="sender">
+      {{! <div class="sender">
         <div class="recents">
           <div class="recent-img">
             <img src="./style/images/avatar_1.png" />
@@ -111,9 +112,9 @@
             <span>Hi Sia, Whats going on?</span>
           </div>
         </div>
-      </div>
+      </div> }}
 
-      <div class="receiver">
+      {{! <div class="receiver">
         <div class="recents">
 
           <div class="recent-data">
@@ -124,9 +125,9 @@
             <img src="./style/images/avatar_3.jpg" />
           </div>
         </div>
-      </div>
+      </div> }}
 
-      <div class="sender two">
+      {{! <div class="sender two">
         <div class="recents">
           <div class="recent-img">
             <img src="./style/images/avatar_1.png" />
@@ -136,16 +137,19 @@
             <span>Sure what time?</span>
           </div>
         </div>
-      </div>
+      </div> }}
 
     </div>
 
     <div class="input-box">
       <img src="./style/images/avatar_3.jpg" alt="" />
-      <input type="text" placeholder="Your Message" />
-      <i class="fas fa-paper-plane send right-align" ></i>
+      <input id="messg-content" type="text" placeholder="Your Message" />
+      <i id="btnSendMessage" class="fas fa-paper-plane send right-align"></i>
     </div>
 
   </div>
 
 </div>
+
+<script src="./scripts/chat.js"></script>
+<script src=“/socket.io/socket.io.js”></script>

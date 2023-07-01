@@ -1,10 +1,10 @@
-const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connection');
+const { Model, DataTypes } = require("sequelize");
+const sequelize = require("../config/connection");
 
 class Participant extends Model {}
 
 Participant.init(
-  { 
+  {
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -16,29 +16,29 @@ Participant.init(
     },
     leaveDate: {
       type: DataTypes.DATE,
-    }, 
+    },
     user_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'user',
-        key: 'id'
-      }
+        model: "user",
+        key: "id",
+      },
     },
     channel_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'channel',
-        key: 'id'
-      }
+        model: "channel",
+        key: "id",
+      },
     },
-    },
-    {
-      sequelize,
-      timestamps: true,
-      freezeTableName: true,
-      underscored: true,
-      modelName: "participant",
-    }
+  },
+  {
+    sequelize,
+    timestamps: true,
+    freezeTableName: true,
+    underscored: true,
+    modelName: "participant",
+  }
 );
 
-// module.exports = Participant;
+module.exports = Participant;
