@@ -7,6 +7,7 @@ const sendMessageHandler = async (event) => {
   const content = document.querySelector("#messg-content").value.trim();
   const from_user_id = document.querySelector("#spuserid").value.trim();
 
+  console.log(content, from_user_id);
   let date = new Date();
   let options = {
     weekday: "long",
@@ -59,11 +60,11 @@ socket.on("message", (msg) => {
   });
 });
 
-socket.emit("join", { username, room }, (error) => {
-  if (error) {
-    alert(error);
-  }
-});
+// socket.emit("join", { username, room }, (error) => {
+//   if (error) {
+//     alert(error);
+//   }
+// });
 
 document
   .querySelector("#btnSendMessage")
