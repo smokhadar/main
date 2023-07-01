@@ -21,22 +21,13 @@ Message.init(
     
     // from_user_id
     user_id: {  
-      type: DataTypes.STRING,
-      allownull: false,
+      type: DataTypes.INTEGER,
+      allowNull: false,
       references: {
         model: "user",
         key: "id",
       },
     },
-    // instead of from_user_id, should it be from participant id?
-    // conversation_id
-    // channel_id: {
-    //   type: DataTypes.INTEGER,
-    //   references: {
-    //     model: 'channel',
-    //     key: 'id',
-    //   }
-    // },
   },
   {
     sequelize,
