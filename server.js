@@ -19,11 +19,9 @@ const {
 const app = express();
 const PORT = process.env.PORT || 3001;
 const server = http.createServer(app);
-//const io = socketio(server);
+const io = socketio(server);
 const publicdir = path.join(__dirname, "./public");
 app.use(express.static(publicdir));
-
-const { io } = require("socket.io-client");
 
 // Set up Handlebars.js engine with custom helpers
 //const hbs = exphbs.create({ helpers });
@@ -41,6 +39,12 @@ app.engine(
 //app.engine("handlebars", hbs.engine);
 app.set("view engine", "handlebars");
 app.set("views", "views");
+
+//main page to render
+// app.get("/", (req, res) => {
+//   console.log("Loading");
+//   res.render("login");
+// });
 
 const sess = {
   secret: "Super secret secret",
