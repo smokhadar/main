@@ -8,17 +8,15 @@ router.post("/", async (req, res) => {
     const userData = await User.create(req.body);
     console.log("test inside new user", { userData });
 
-    // if (res.status(200)) {
-    //   res.render("chat", { user: userData });
-    // }
-    res.status(200).json(userData);
+    req.session.save(() => {
+      req.session.user_id = userData.id;
+      req.session.logged_in = true;
+    });
 
-    // req.session.save(() => {
-    //   req.session.user_id = userData.id;
-    //   req.session.logged_in = true;
+   res.render('profile', {
+    ...userData,
+   })
 
-    //   res.status(200).json(userData);
-    // });
   } catch (err) {
     console.log(err);
     res.status(400).json(err);
@@ -40,7 +38,7 @@ router.put('/:id', async(req, res) => {
       }
      )
       .then((updatedUser) => {
-        res.json(updatedUser);
+        res.render('profile', );
       }) 
      .catch((err) => {
     console.log(err);
@@ -94,5 +92,14 @@ router.post("/logout", (req, res) => {
     res.status(404).end();
   }
 });
+
+//create route to show online users
+// router.get('/online', (req, res) => {
+//   try {
+//     const onlineUsers = 
+//   } catch (err) {
+
+//   }
+// });
 
 module.exports = router;

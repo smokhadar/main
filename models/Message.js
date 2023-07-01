@@ -1,7 +1,5 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
-// const { TIME } = require('sequelize');
-// const { Channel } = require('../../../project2main-1/models');
 
 class Message extends Model {}
 
@@ -15,14 +13,16 @@ Message.init(
       autoIncrement: true,
     },
     // message_text
-    body: {
+    text: {
       type: DataTypes.STRING,
+      // allowNull needs to be true otherwise it won't post
       allowNull: false,
     },
+    
     // from_user_id
-    user_id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
+    user_id: {  
+      type: DataTypes.STRING,
+      allownull: false,
       references: {
         model: "user",
         key: "id",
