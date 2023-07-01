@@ -71,6 +71,8 @@ router.post("/login", async (req, res) => {
       return;
     }
 
+    userData.onlineStatus = true;
+
     req.session.save(() => {
       req.session.user_id = userData.id;
       req.session.logged_in = true;
@@ -88,18 +90,26 @@ router.post("/logout", (req, res) => {
     req.session.destroy(() => {
       res.status(204).end();
     });
+  // change users online status to false?
   } else {
     res.status(404).end();
   }
 });
 
-//create route to show online users
-// router.get('/online', (req, res) => {
-//   try {
-//     const onlineUsers = 
-//   } catch (err) {
+// create route to show online users
+router.get('/online', async (req, res) => {
+  try {
+    const onlineUsers = await User.findAll( {
+      where: { onlineStatus: true }
+    });
 
-//   }
-// });
+    if (!onlineUsers) {
+      console.log("No users are currently online.");
+    }
+  } catch (err) {
+    console.log(err);
+    res.status(400).json(err);
+  }
+});
 
 module.exports = router;
