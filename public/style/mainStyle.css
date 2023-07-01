@@ -76,6 +76,12 @@ form.sign-up-f {
   margin-bottom: 10px;
 }
 
+.loginF {
+  visibility: hidden;
+  font-size: 10px;
+  color: red;
+}
+
 .input-field {
   width: 100%;
   height: 50px;

@@ -16,7 +16,13 @@ const loginFormHandler = async (event) => {
       // TODO: Show the details page
       document.location.replace("/chat", { response: response });
     } else {
-      alert(response.statusText);
+      const userField = document.querySelector("#userLog");
+      const passField = document.querySelector("#passLog");
+      const messageLFail = document.querySelector(".loginF");
+      userField.style.borderColor = "red";
+      passField.style.borderColor = "red";
+      messageLFail.style.visibility = "visible";
+      messageLFail.innerHTML = `Login Failed. Check your credentials and try again.`;
     }
   }
 };

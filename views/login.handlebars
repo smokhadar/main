@@ -3,11 +3,12 @@
     <!--Sign in panel-->
     <form action="" class="sign-in-f">
       <h2 class="title">Sign In</h2>
-      <div class="input-field">
+      <span class="loginF"></span>
+      <div class="input-field" id="userLog">
         <i class="fas fa-user"></i>
         <input type="text" placeholder="Username" id="username-login" />
       </div>
-      <div class="input-field">
+      <div class="input-field" id="passLog">
         <i class="fas fa-lock"></i>
         <input type="password" placeholder="Password" id="password-login" />
       </div>
@@ -25,7 +26,7 @@
       </div>
       <div class="input-field" id="password-Val">
         <i class="fas fa-lock"></i>
-        <input type="password" placeholder="Password" id="password-signup" onkeyup="validatePassword()" />
+        <input type="password" placeholder="Password" id="password-signup" />
         <span id="password-error">
         </span>
         <i id="error-icon-p"class="bx bx-error-circle error-icon"></i>
