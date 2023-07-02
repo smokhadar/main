@@ -41,4 +41,4 @@ Participant.init(
   }
 );
 
-module.exports = Participant;
+// module.exports = Participant;
