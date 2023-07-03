@@ -13,8 +13,10 @@ router.post("/", async (req, res) => {
       req.session.logged_in = true;
     });
 
+  userData.onlineStatus = true;
+
   const user = userData.get({ plain: true });
-  
+
    res.render('profile', {
     user
    })
@@ -74,6 +76,7 @@ router.post("/login", async (req, res) => {
     }
 
     userData.onlineStatus = true;
+    console.log(userData, "loginRoute")
 
     req.session.save(() => {
       req.session.user_id = userData.id;

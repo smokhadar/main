@@ -37,10 +37,13 @@ router.get('/profile', withAuth, async (req, res) => {
     });
 
     const user = userData.get({ plain: true });
-    
+
+    console.log(user, 'userdata from SQL');
+
     res.render('profile', {
       ...user,
-      logged_in: true
+      chatCSS: true,
+      logged_in: req.session.logged_in
     });
   } catch (err) {
     console.log(err);
