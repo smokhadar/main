@@ -13,14 +13,17 @@
         <input type="password" placeholder="Password" id="password-login" />
       </div>
       <input type="submit" value="Login" class="btn" id="btnLogin" />
+      <i class="fas fa-moon" onclick="darkMode()"></i>
+      <i class="fas fa-sun" onclick="lightMode()"></i>
       <!--appears when on mobile screen-->
       <p class="account-text">Don't have an account?
-        <a href="#" id="signUpBtnTwo">Sign up</a></p>
+        <a href="#" id="signUpBtnTwo">Sign up</a>
+      </p>
     </form>
     <!--Sign up panel-->
     <form action="" class="sign-up-f">
       <h2 class="title">Sign Up</h2>
-      <div class="input-field">
+      <div class="input-field" id="username-Val">
         <i class="fas fa-user"></i>
         <input type="text" placeholder="Username" id="username-signup" />
       </div>
@@ -38,6 +41,8 @@
         <i id="error-icon-email" class="bx bx-error-circle error-icon"></i>
       </div>
       <input type="submit" value="Sign Up" class="btn" id="btnSignup" />
+      <i class="fas fa-moon" onclick="darkMode()"></i>
+      <i class="fas fa-sun" onclick="lightMode()"></i>
       <!--appears when on mobile screen-->
       <p class="account-text">Already have an account?
         <a href="#" id="signInBtnTwo">Sign in</a></p>
@@ -52,8 +57,7 @@
           cumque?</p>
         <button class="btn" id="signInBtn">Sign in</button>
       </div>
-      <!-- (buggy)
-          <img src="/style/images/undraw_mobile_user_re_xta4.svg" alt="" class="image"> -->
+          <img src="/style/images/undraw_mobile_user_re_xta4.svg" alt="" class="image">
     </div>
     <div class="panel right-panel">
       <div class="content">
@@ -63,8 +67,7 @@
           cumque?</p>
         <button class="btn" id="signUpBtn">Sign up</button>
       </div>
-      <!-- (buggy)
-          <img src="/style/images/undraw_public_discussion_re_w9up.svg"> -->
+          <img src="/style/images/undraw_public_discussion_re_w9up.svg" class="image"> 
     </div>
   </div>
 </div>

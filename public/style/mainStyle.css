@@ -36,6 +36,10 @@ body {
   transition: 1s ease-in-out;
 }
 
+.container.darkBack::before {
+  background: linear-gradient(-45deg, #1c1c1c, #000);
+}
+
 .sign-in-sign-up {
   position: absolute;
   top: 0;
@@ -156,7 +160,22 @@ form.sign-up-f {
   background: #c03cc0;
 }
 
-/* insert styling here if did social media */
+/* #btnLogin.darkM:hover {
+  background: #888;
+}
+*/
+
+.fa-sun {
+  color: grey;
+  visibility: hidden;
+}
+.fa-moon {
+  color: grey;
+}
+
+.account-text {
+  color: grey;
+}
 
 .panels-container {
   position: absolute;
