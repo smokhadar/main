@@ -101,6 +101,10 @@ body {
   color: white;
 }
 
+.fa-sun {
+  display: none;
+}
+
 .sidebar .title {
   padding: 10px;
   margin-top: 10px;
