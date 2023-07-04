@@ -167,7 +167,7 @@ form.sign-up-f {
 
 .fa-sun {
   color: grey;
-  visibility: hidden;
+  display:none;
 }
 .fa-moon {
   color: grey;
