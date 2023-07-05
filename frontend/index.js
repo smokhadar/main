@@ -5,7 +5,6 @@ const http = require("http");
 const handlebars = require("express-handlebars");
 const cookieParser = require("cookie-parser");
 const sessions = require("express-session");
-const { left } = require("inquirer/lib/utils/readline");
 
 const utilhelpers = require("./utils/helpers");
 
