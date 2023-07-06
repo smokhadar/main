@@ -53,20 +53,17 @@ const signupFormHandler = async (event) => {
 
   if (username && email && user_password) {
     try {
-      const response = await fetch(
-        "http://localhost:5000/api/messenger/user-register",
-        {
-          method: "POST",
-          body: JSON.stringify({ username, email, user_password }),
-          headers: { "Content-Type": "application/json" },
-        }
-      );
+      const response = await fetch("/register", {
+        method: "POST",
+        body: JSON.stringify({ username, email, user_password }),
+        headers: { "Content-Type": "application/json" },
+      });
 
       if (response.ok) {
         //show alert with register successfull.
 
         document.location.assign("/");
-        alert('Your account is created. Please sign in!');
+        alert("Your account is created. Please sign in!");
         //localStorage.setItem("authToken", response.data.user);
         // console.log(
         //   "UserInfo",
