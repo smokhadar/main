@@ -30,7 +30,7 @@ In modern days, messaging has become part of our daily lives. With the increase 
 
 
 ## Description
-An easy to use messenger app that allows users to make an account, log in and send messages to other online users. This project was made with node, javascript, handlebars and socket io. We built this project to challenge ourselves as developers and create a program that we could use. We learned how to initialize and integrate socket IO, work with Handlebars, deploy our project using Heroku, and practiced creating mySql models and relationships.
+An easy to use messenger app that allows users to make an account, log in and send messages to other online users. This project was made with node, javascript, express.js, handlebars, MySQL, Sequlize ORM socket io and express-sessions and cookies were used for authentication. We built this project to challenge ourselves as developers and create a program that we could use. We learned how to initialize and integrate socket IO, work with Handlebars, deploy our project using Heroku, and practiced creating mySql models and relationships.
 
 
 ## Installation  
