@@ -65,7 +65,8 @@ const signupFormHandler = async (event) => {
       if (response.ok) {
         //show alert with register successfull.
 
-        document.location.assign("/login");
+        document.location.assign("/");
+        alert('Your account is created. Please sign in!');
         //localStorage.setItem("authToken", response.data.user);
         // console.log(
         //   "UserInfo",
