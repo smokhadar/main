@@ -1,5 +1,5 @@
 # CatchUp Messenger App 
-<img width="357" alt="Screenshot 2023-07-05 at 7 50 39 PM" src="https://github.com/smokhadar/project2main/assets/35505692/3a1b78e6-5806-48cb-93ce-4c5bca991a9c">
+<img aligin="center" width="357" alt="Screenshot 2023-07-05 at 7 50 39 PM" src="https://github.com/smokhadar/project2main/assets/35505692/3a1b78e6-5806-48cb-93ce-4c5bca991a9c">
 
 
 ## Description
