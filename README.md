@@ -36,10 +36,10 @@ An easy to use messenger app that allows users to make an account, log in and se
 ## Installation  
 
 No installation is necessary. To use the application click on the link below:  
-https://sheltered-sea-11068-ef6392f13d6a.herokuapp.com/chat  
+https://sheltered-sea-11068-ef6392f13d6a.herokuapp.com/  
 
 Our github repo:   
-(https://github.com/smokhadar/project2main-catchUp)
+https://github.com/smokhadar/project2main-catchUp
 
 
 ## Usage
