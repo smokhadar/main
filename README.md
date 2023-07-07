@@ -39,7 +39,7 @@ No installation is necessary. To use the application click on the link below:
 https://sheltered-sea-11068-ef6392f13d6a.herokuapp.com/chat  
 
 Our github repo:   
-https://github.com/smokhadar/project2main
+(https://github.com/smokhadar/project2main-catchUp)
 
 
 ## Usage
